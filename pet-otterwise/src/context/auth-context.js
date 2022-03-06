@@ -1,39 +1,41 @@
-import { createContext, useContext, useState } from 'react'
-import { authProvider } from '../providers/auth'
-import { useLocation, Navigate } from 'react-router-dom'
+import { createContext, useContext, useState } from "react";
+import { useLocation, Navigate } from "react-router-dom";
 
-const AuthContext = createContext(null)
+import { authProvider } from "../providers/auth";
+
+const AuthContext = createContext(null);
 
 export const AuthProvider = (props) => {
-  const [user, setUser] = useState(null)
+  const userStored = localStorage.getItem("user");
+  const [user, setUser] = useState(userStored ? JSON.parse(userStored) : null);
 
   const login = (data, callback) => {
     authProvider.signin(data, (user) => {
-      setUser(user)
-      callback()
-    })
-  }
+      setUser(user);
+      callback();
+    });
+  };
+
   const logout = (callback) => {
     authProvider.signout(() => {
-      setUser(null)
-      callback()
-    })
-  }
+      setUser(null);
+      callback();
+    });
+  };
 
-  return <AuthContext.Provider value={{ user, login, logout }} {...props} />
-}
+  return <AuthContext.Provider value={{ user, login, logout }} {...props} />;
+};
 
 export const useAuth = () => {
-  return useContext(AuthContext)
-}
+  return useContext(AuthContext);
+};
 
 export const RequireAuth = ({ children }) => {
-  const auth = useAuth()
-  const location = useLocation()
+  const auth = useAuth();
+  const location = useLocation();
 
   if (!auth.user?.token) {
-    return <Navigate to="/login" state={{ from: location }} />
+    return <Navigate to="/login" state={{ from: location }} />;
   }
-
-  return children
-}
+  return children;
+};

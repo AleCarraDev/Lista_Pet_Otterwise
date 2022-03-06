@@ -26,7 +26,7 @@ export default function CreatePetForm() {
   return (
     <main className="container">
       <div className="title">
-        <h1>Create Pet</h1>
+        <h1>Criar lista Pet</h1>
       </div>
       <div className="flex">
         <div>
@@ -38,11 +38,11 @@ export default function CreatePetForm() {
         </div>
         <form onSubmit={handleSubmitForm} className="form">
           <label htmlFor="name">Nome</label>
-          <input type="text" name="name" placeholder="Tótó" />
+          <input type="text" name="name" placeholder="Insira o nome do pet" />
           <label htmlFor="breed">Raça</label>
-          <input type="text" name="breed" placeholder="Pitbull" />
+          <input type="text" name="breed" placeholder="Insira a raça do pet" />
           <label htmlFor="age">Idade</label>
-          <input type="number" name="age" placeholder="2" />
+          <input type="number" name="age" placeholder="Insira a idade do pet" />
           <label htmlFor="species">Espécie</label>
           <select name="species">
             <option value="cachorro">Cachorro</option>
@@ -54,14 +54,14 @@ export default function CreatePetForm() {
             <option value="femea">Fêmea</option>
           </select>
           <label htmlFor="tutor">Tutor</label>
-          <input type="text" name="tutor" placeholder="João" />
-          <label htmlFor="image">Imagem</label>
           <input
-            type="url"
-            name="image"
-            placeholder="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi2.wp.com%2Fpetcaramelo.com%2Fwp-content%2Fuploads%2F2018%2F12%2Fpitbull.jpg%3Fssl%3D1&f=1&nofb=1"
+            type="text"
+            name="tutor"
+            placeholder="Insira o nome do tutor"
           />
-          <button>Create</button>
+          <label htmlFor="image">Imagem</label>
+          <input type="url" name="image" placeholder="Insira a url da imagem" />
+          <button>🐾🐾 Criar 🐾🐾</button>
         </form>
       </div>
     </main>

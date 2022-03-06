@@ -1,21 +1,20 @@
-import axios from 'axios'
+import axios from "axios";
 
-const apiURL = process.env.REACT_APP_API_URL
+const apiURL = process.env.REACT_APP_API_URL;
+console.log("apiURL", apiURL);
 
-const instance = axios.create({
-  baseURL: apiURL,
-})
+const instance = axios.create({ baseURL: apiURL });
 
 instance.interceptors.request.use((config) => {
-  const user = localStorage.getItem('user')
+  const user = localStorage.getItem("user");
 
   return {
     ...config,
     headers: {
       ...config.headers,
-      Authorization: user ? `Bearer ${JSON.parse(user).token}` : '',
+      Authorization: user ? `Bearer ${JSON.parse(user).token}` : "",
     },
-  }
-})
+  };
+});
 
-export default instance
+export default instance;

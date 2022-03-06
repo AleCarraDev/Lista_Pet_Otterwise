@@ -1,23 +1,21 @@
-import { login } from '../services/auth'
+import { login } from "../services/auth";
 
 export const authProvider = {
   isAuthenticated: false,
   signin: async (data, callback) => {
     try {
-      const response = await login(data)
-      console.log(response)
+      const response = await login(data);
       const user = {
         token: response.data.token,
-        name: 'Usuário',
-      }
-      localStorage.setItem('user', JSON.stringify(user))
-      callback(user)
-    } catch (error) {
-      console.log(error)
-    }
+        name: response.data.user.name,
+      };
+      localStorage.setItem("user", JSON.stringify(user));
+      console.log(response);
+      callback(user);
+    } catch (error) {}
   },
   signout: (callback) => {
-    localStorage.removeItem('user')
-    callback()
+    localStorage.removeItem("user");
+    callback();
   },
-}
+};

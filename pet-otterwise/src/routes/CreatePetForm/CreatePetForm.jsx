@@ -26,23 +26,35 @@ export default function CreatePetForm() {
   return (
     <main className="container">
       <div className="title">
-        <h1>Criar lista Pet</h1>
+        <h1>🐾Criar lista Pet🐾</h1>
       </div>
       <div className="flex">
         <div>
           <img
-            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.fastcompany.net%2Fimage%2Fupload%2Fw_1280%2Cf_auto%2Cq_auto%2Cfl_lossy%2Ffc%2F3024889-poster-p-1-dogecoin.jpg&f=1&nofb=1"
-            alt="dog"
+            src="https://static.wixstatic.com/media/1b82a5_503c2f4782ee416b8d65b75b3b9bea42~mv2.jpg/v1/fill/w_800,h_600,al_c,q_90/1b82a5_503c2f4782ee416b8d65b75b3b9bea42~mv2.jpg"
+            alt="Pet"
             className="image"
           />
         </div>
         <form onSubmit={handleSubmitForm} className="form">
           <label htmlFor="name">Nome</label>
-          <input type="text" name="name" placeholder="Insira o nome do pet" />
+          <input
+            type="text"
+            name="name"
+            placeholder="🐾Insira o nome do pet🐾"
+          />
           <label htmlFor="breed">Raça</label>
-          <input type="text" name="breed" placeholder="Insira a raça do pet" />
+          <input
+            type="text"
+            name="breed"
+            placeholder="🐾Insira a raça do pet🐾"
+          />
           <label htmlFor="age">Idade</label>
-          <input type="number" name="age" placeholder="Insira a idade do pet" />
+          <input
+            type="number"
+            name="age"
+            placeholder="🐾Insira a idade do pet🐾"
+          />
           <label htmlFor="species">Espécie</label>
           <select name="species">
             <option value="cachorro">Cachorro</option>

@@ -11,12 +11,12 @@ function Layout() {
           <ul>
             <li>
               <Link to="/" className="navbar-link">
-                Pets
+                🐾Lista Pets🐾
               </Link>
             </li>
             <li>
               <Link to="/create" className="navbar-link">
-                Create Pet
+                🐾Criar Pet🐾
               </Link>
             </li>
           </ul>
